@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(image.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width:100px;
+}
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background-color: #f33665;
+    transition: 0.5s;
+    display: block;
+    margin: auto;
+
+}
+.nav-links ul li:hover::after{
+    width:100%;
+}
+.text-box{
+    width: 50%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    
+}
+.text-box h1{
+    font-size: 50px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 25px;
+}
+.btnh1{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 34px;
+    font-size: 14px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.btnh1:hover{
+    border: 2px solid #f33665;
+    background: #f33665;
+    transition: 1s;
+}
+nav .fa{
+    display: none;
+}
+@media(max-widtgh:700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f33665;
+        height: 100vh;
+        width:200px;
+        top:0;
+        right:-200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+.pesticides{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+.pesticides h1{
+    font: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.pesticides h1 span{
+    margin-left: 15px;
+    color: #18b153;
+}
+.pesticides h1 span:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background:#f33665;
+    position: relative;
+    bottom: 15px;
+    display: block;
+}
+.pesticides .pesti-box{
+    width: 95%;
+    margin: 70px auto;
+    display: flex;
+}
+.pesticides .pesti-box .pesti-card {
+    width: 350px;
+    height: 500px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    padding: 8px 20px;
+    margin: 0 8px;
+}
+.pesticides .pesti-box .pesti-card .pesti-img img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border:5px solid #cccccc ;
+}
+
+.pesticides .pesti-box .pesti-card .pesti-name{
+    text-align: center;
+}
+.pesticides .pesti-box .pesti-card .pesti-name h2{
+    color: #000;
+    transition: 0.3s;
+}
+.pesticides .pesti-box .pesti-card .pesti-name p{
+    font-size: 10px;
+}
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(contact.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+.footer{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(43, 201, 26, 0.7),rgba(9, 9, 10, 0.7)),url(about.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+
+}
+h3{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+    padding-top: 10px;
+}
