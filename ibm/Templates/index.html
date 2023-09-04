@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture Project</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+}
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../static/image.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img{
+    width:100px;
+}
+.nav-links{
+    flex:1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+    text-decoration: none;
+    font-size: 20px;
+}
+.nav-links ul li::after{
+    content: '';
+    width:0%;
+    height: 2px;
+    background-color: #f33665;
+    transition: 0.5s;
+    display: block;
+    margin: auto;
+
+}
+.nav-links ul li:hover::after{
+    width:100%;
+}
+.text-box{
+    width: 50%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+    
+}
+.text-box h1{
+    font-size: 50px;
+}
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 25px;
+}
+.btnh1{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 34px;
+    font-size: 14px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.btnh1:hover{
+    border: 2px solid #f33665;
+    background: #f33665;
+    transition: 1s;
+}
+nav .fa{
+    display: none;
+}
+@media(max-widtgh:700px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    }
+    .nav-links{
+        position: absolute;
+        background: #f33665;
+        height: 100vh;
+        width:200px;
+        top:0;
+        right:-200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+.pesticides{
+    width: 100%;
+    height: 100vh;
+    padding: 70px 0;
+}
+.pesticides h1{
+    font: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.pesticides h1 span{
+    margin-left: 15px;
+    color: #18b153;
+}
+.pesticides h1 span:after{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background:#f33665;
+    position: relative;
+    bottom: 15px;
+    display: block;
+}
+.pesticides .pesti-box{
+    width: 95%;
+    margin: 70px auto;
+    display: flex;
+}
+.pesticides .pesti-box .pesti-card {
+    width: 350px;
+    height: 500px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    padding: 8px 20px;
+    margin: 0 8px;
+}
+.pesticides .pesti-box .pesti-card .pesti-img img{
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    border:5px solid #cccccc ;
+}
+
+.pesticides .pesti-box .pesti-card .pesti-name{
+    text-align: center;
+}
+.pesticides .pesti-box .pesti-card .pesti-name h2{
+    color: #000;
+    transition: 0.3s;
+}
+.pesticides .pesti-box .pesti-card .pesti-name p{
+    font-size: 10px;
+}
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../static/contact.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-top: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+.footer{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(43, 201, 26, 0.7),rgba(9, 9, 10, 0.7)),url(../static/about.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+
+}
+h3{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+    </style>
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <a href="index.html"><img src="" ></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times " onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Contact Us</a></li>
+                    <li><a href="">Categories</a></li>
+                    <li><a href="">AboutUs</a></li>
+                    </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <div class="text-box">
+            
+            <h1>Agriculture</h1>
+            <p>Provide the best way to cultivate </p>
+            <a href="" class="btnh1">Visit us to know more</a>
+        </div>
+    </section>
+    <div>
+        
+        <iframe src="https://us3.ca.analytics.ibm.com/bi/?perspective=dashboard&amp;pathRef=.my_folders%2Fdash1&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;mode=dashboard&amp;subView=model0000018a45c7b0bb_00000002" width="100%" height="500px" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
+        <iframe src="https://us3.ca.analytics.ibm.com/bi/?perspective=dashboard&amp;pathRef=.my_folders%2Fdash2&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;mode=dashboard&amp;subView=model0000018a45fa4e3e_00000002" width="100%" height="500px" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
+        <iframe src="https://us3.ca.analytics.ibm.com/bi/?perspective=dashboard&amp;pathRef=.my_folders%2Fdash4&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;mode=dashboard&amp;subView=model0000018a46d3b3a8_00000000" width="100%" height="500px" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
+        
+        <iframe src="https://us3.ca.analytics.ibm.com/bi/?perspective=story&amp;pathRef=.my_folders%2Fstory2&amp;closeWindowOnLastView=true&amp;ui_appbar=false&amp;ui_navbar=false&amp;shareMode=embedded&amp;action=view&amp;sceneId=-1&amp;sceneTime=0" width="100%" height="500px" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen=""></iframe>
+    </div>
+
+    <!--pesticides-->
+    <div class="pesticides" id="Contact Us">
+        <h1>OUR <span>PRODUCTS</span></h1>
+        <div class="pesti-box">
+            
+            <div class="pesti-card">
+                <div class="pesti-img">
+                    <img src="../static/Glysid.jpeg" alt="">
+                </div>
+                <div class="pesti-name">
+                    <h2>GLYSID</h2>
+                
+                <div class="pesti_icon">
+                    <a href=""></a>
+                    <a href=""></a>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="social">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <p>
+                    The present invention provides a process for preparing a highly 
+                    pure form of malathion having a reduced level of toxic impurities. 
+                    In addition, the malathion prepared by the process of this invention
+                    is storage stable. The level of toxic impurities in the malathion, 
+                    e.g., isomalathion, O,O,S-trimethyl phosphorodithioate (MeOOSPS), 
+                    O,O,S-trimethyl phosphorothioate (MeOOSPO), O,S,S-trimethyl 
+                    phosphorodithioate (MeOSSPO), malaoxon, isomalathion, diethyl fumarate, 
+                    methyl malathion, dimethyl malathion, O,O-methyl,ethyl-S-(1,2-dicarboethoxy)
+                    ethyl-phosphorodithioate are lower than that of any other commercial preparation 
+                    of malathion that may be used for pharmaceutical purpose
+                </p>
+            </div>
+            </div>
+            <div class="pesti-card">
+                <div class="pesti-img">
+                    <img src="../static/Diazinon.jpeg" alt="">
+                </div>
+                <div class="pesti-name">
+                    <h2>DIAZINON</h2>
+                
+                <div class="pesti_icon">
+                    <a href=""></a>
+                    <a href=""></a>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="social">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <p>
+                    Diazinon functions as an acetylcholinesterase (AChE) inhibitor. This enzyme breaks down the neurotransmitter acetylcholine (ACh) into choline and an acetate group.[7] The inhibition of AChE causes an abnormal accumulation of ACh in the synaptic cleft.[citation needed]
+
+When diazinon enters the body, it is oxidatively decomposed to diazoxon, an organophosphate compound that is much more poisonous than diazinon; it mainly causes the inhibition of AChE.[8] The conversion of diazinon to diazoxon (Reaction 1) is performed by the liver microsomal enzyme system and requires O2 and NADPH</p>
+            </div>
+            </div>
+            <div class="pesti-card">
+                <div class="pesti-img">
+                    <img src="../static/Bloom Buddy.jpeg" alt="">
+                </div>
+                <div class="pesti-name">
+                    <h2>BLOOM BUDDY</h2>
+                
+                <div class="pesti_icon">
+                    <a href=""></a>
+                    <a href=""></a>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="social">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <p>
+                    Organic growth boosters can be used in a variety of ways, depending on the type of growth booster and the plant’s needs. Here are some common application methods:
+Soil Drench: Mix the organic growth booster with water and apply it to the soil around the base of the plant. This method is effective for providing a slow-release of nutrients to the plant’s roots.
+Foliar Spray: Mix the organic growth booster with water and apply it to the plant’s leaves. This method is effective for providing a quick boost of nutrients to the plant and improving its overall health.
+Top Dressing: Sprinkle the organic growth booster over the soil around the base of the plant. This method is effective for providing a slow-release of nutrients to the plant’s roots.</p>
+            </div>
+            </div>
+            <div class="pesti-card">
+                <div class="pesti-img">
+                    <img src="../static/Malathion.jpeg" alt="">
+                </div>
+                <div class="pesti-name">
+                    <h2>MALATHION</h2>
+                
+                <div class="pesti_icon">
+                    <a href=""></a>
+                    <a href=""></a>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="social">
+                    <i class="fa-brands fa-twitter"></i>
+                    <i class="fa-brands fa-facebook"></i>
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <p>
+                    he present invention provides a process for preparing a highly pure form of malathion having a reduced level of toxic impurities. In addition, the malathion prepared by the process of this invention is storage stable. The level of toxic impurities in the malathion, e.g., isomalathion, O,O,S-trimethyl phosphorodithioate (MeOOSPS), O,O,S-trimethyl phosphorothioate (MeOOSPO), O,S,S-trimethyl phosphorodithioate (MeOSSPO), malaoxon, isomalathion, diethyl fumarate, methyl malathion, dimethyl malathion, O,O-methyl,ethyl-S-(1,2-dicarboethoxy)ethyl-phosphorodithioate are lower than that of any other commercial preparation of malathion that may be used for pharmaceutical purposes.</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var navLinks=document.getElementById("navLinks");
+        
+        function showMenu(){
+            navLinks.style.right="0";
+        }
+        function hideMenu(){
+            navLinks.style.right="-200px";
+        }
+    </script>
+    
+    <section class="cta">
+        <a href="" class="btnh1">CONTACT US</a>
+    </section>
+    
+    <section class="footer">
+        <h4>AboutUs</h4>
+        <p>
+        Agriculture is the art and science of cultivating the soil growing crops and rising live stock 
+        It inlcudes the preparation of plant and animal products for people to use and their distribution to markets,
+        Agriculture provides most of the world's food and fabrics .It's the main tradition occupation of our country
+        It provides employment opportunity to the rural Agricultural as well as non Agricultural labourers.
+        It is the source of food and fooder .It also plays an important role in international bussiness
+        in import and export activities .It is the science and pratice of growing crops by the cultivation of the land
+        It is the backbone of the indian economy.It comprises activities like growing pulses ,food grains,sugarcane,cotton,jute,
+        oil seeds etc.... 
+        </p>
+        <div class="icons">
+
+        </div>
+    </section>
+    
+</body>
+</html>
